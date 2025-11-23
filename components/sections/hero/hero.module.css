@@ -2,13 +2,14 @@
 
 .section {
   position: relative;
-  height: calc(100vh - 80px); 
+  height: calc(100vh - 80px);
   min-height: 600px;
   background-color: var(--primary-orange);
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Pushes content to the right */
+  justify-content: flex-end;
+  /* Pushes content to the right */
   padding: 2rem 5%;
 }
 
@@ -20,7 +21,8 @@
   height: 100%;
   /* Creates small dots using a radial gradient */
   background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1.5px, transparent 1.5px);
-  background-size: 20px 20px; /* Spacing of dots */
+  background-size: 20px 20px;
+  /* Spacing of dots */
   pointer-events: none;
   z-index: 1;
 }
@@ -30,7 +32,7 @@
   position: absolute;
   top: 0;
   left: 0%;
-  height: 100%; 
+  height: 100%;
   width: 85%;
   z-index: 2;
   transform-origin: left center;
@@ -42,50 +44,51 @@
   /* The main yellow color */
   fill: var(--lightning-yellow);
   /* The darker "shadow" part of the bolt */
-  filter: drop-shadow(15px 15px 0px #E1A61F); 
+  filter: drop-shadow(15px 15px 0px #E1A61F);
 }
 
-.heroBg{
-    position: absolute;
-    z-index: 0;
-    max-height: 360px;
+.heroBg {
+  position: absolute;
+  z-index: 0;
+  max-height: 360px;
 }
 
-
-
-.heroMain{
-    position: absolute;
-    z-index: 2;
-    max-width: 500px;
-    left: 230px;
+.heroMain {
+  position: absolute;
+  z-index: 2;
+  max-width: 500px;
+  left: 230px;
 }
 
 /* --- Content Section (Text & Button) --- */
 .content {
   position: relative;
-  z-index: 10; /* Above the bolt */
+  z-index: 10;
+  /* Above the bolt */
   text-align: right;
   max-width: 600px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   /* Initial state for GSAP to animate from */
-  visibility: hidden; 
+  visibility: hidden;
 }
 
 .mainTitle {
   font-family: var(--font-comic);
-  font-size: clamp(3rem, 8vw, 5.5rem); /* Responsive comic sizing */
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  /* Responsive comic sizing */
   line-height: 0.9;
   color: var(--white);
   text-transform: uppercase;
   font-style: italic;
   margin-bottom: 1rem;
-  
+
   /* The Comic Text Outline Effect */
   -webkit-text-stroke: 3px var(--black-ink);
   text-shadow: 5px 5px 0px var(--black-ink);
-  transform: rotate(-2deg); /* Slight comic tilt */
+  transform: rotate(-2deg);
+  /* Slight comic tilt */
 }
 
 .subTitle {
@@ -132,13 +135,23 @@
     align-items: flex-end;
     padding-bottom: 4rem;
   }
+
   .content {
     align-items: center;
     text-align: center;
   }
+
   .boltContainer {
     width: 120%;
     left: -30%;
-    opacity: 0.7; /* Fade bolt slightly on mobile so text pops */
+    opacity: 0.7;
+    /* Fade bolt slightly on mobile so text pops */
+  }
+
+  .heroMain {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    max-width: 300px;
   }
 }

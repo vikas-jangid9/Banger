@@ -131,7 +131,7 @@ export default function HeroSection() {
         />
 
         <Image
-          src='/assets/images/hero-main-image.png'
+          src='/assets/images/Hero-main-image.png'
           alt='Hero'
           width={1920}
           height={1080}

@@ -1,58 +1,126 @@
-.headerBox{
-  background-color: var(--primary-orange); /* bg-gray-800 */
-  color: var(--off-white); /* text-white */
+.headerBox {
+  background-color: var(--primary-orange);
+  color: var(--off-white);
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  position: relative;
+  z-index: 100;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%; /* Ensure it spans full width */
+  width: 100%;
   max-width: 130rem;
   margin: auto;
+  padding: 1rem 2rem;
 }
 
 .logoContainer {
-  flex-shrink: 0; /* flex-shrink-0 */
+  flex-shrink: 0;
+  z-index: 101;
+  /* Ensure logo stays above mobile menu if needed, or menu covers it */
 }
 
 .logoImage {
-  height: 8rem !important; /* h-8 */
+  height: 3rem;
+  width: auto;
   object-fit: contain;
 }
 
-@media (min-width: 768px) { /* md breakpoint */
-  .logoImage {
-    height: 2.5rem; /* md:h-10 */
-  }
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  z-index: 102;
+}
+
+/* Close Button */
+.closeBtn {
+  display: none;
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
 }
 
 .navbarNav {
-  display: flex; /* flex */
-  list-style: none; /* Remove default list bullets */
+  display: flex;
+  list-style: none;
   margin: 0;
   padding: 0;
-  gap: 1rem; /* space-x-4 */
-}
-
-.navLink{
-  font-size: 1.6rem;
-}
-
-@media (min-width: 768px) { /* md breakpoint */
-  .navbarNav {
-    gap: 1.5rem; /* md:space-x-6 */
-  }
+  gap: 2rem;
 }
 
 .navLink {
-  color: inherit; /* Ensure link color is inherited from .header */
-  text-decoration: none; /* Remove underline */
-  transition: color 0.2s ease-in-out; /* Smooth transition for hover */
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .navLink:hover {
-  color: #cbd5e0; /* hover:text-gray-300 */
+  color: var(--black-ink);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--primary-orange);
+    flex-direction: column;
+    justify-content: center;
+    transition: right 0.3s ease-in-out;
+    z-index: 101;
+  }
+
+  .navOpen {
+    right: 0;
+  }
+
+  .closeBtn {
+    display: block;
+  }
+
+  .navbarNav {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .navLink {
+    font-size: 2rem;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+  .logoImage {
+    height: 4rem;
+  }
+
+  .header {
+    padding: 1rem 5%;
+  }
 }

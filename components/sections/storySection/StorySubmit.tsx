@@ -57,15 +57,15 @@ export default function StorySubmit() {
   };
 
   return (
-    <section className={styles.section} ref={containerRef}>
+    <section className={styles.section} ref={containerRef} id="submit-comic">
       {/* 1. The Comic Image Strip */}
       <div className={styles.stripContainer}>
         {/* Using placeholders. Replace src with your actual comic assets */}
         {[1, 2, 3, 4].map((num) => (
           <div key={num} className={styles.panel} ref={addToRefs}>
-            <img 
-              src={`https://placehold.co/400x600/orange/white?text=Comic+Panel+${num}`} 
-              alt={`Comic Panel ${num}`} 
+            <img
+              src={`https://placehold.co/400x600/orange/white?text=Comic+Panel+${num}`}
+              alt={`Comic Panel ${num}`}
             />
           </div>
         ))}
@@ -110,17 +110,17 @@ export default function StorySubmit() {
 
       {/* 4. Submit Button */}
       <div className={styles.ctaWrapper}>
-        <button 
-            className={styles.mainSubmitBtn}
-            onClick={() => setIsModalOpen(true)}
+        <button
+          className={styles.mainSubmitBtn}
+          onClick={() => setIsModalOpen(true)}
         >
-            Submit Your Story
+          Submit Your Story
         </button>
-        </div>
-        <StoryModal 
-            isOpen={isModalOpen} 
-            onClose={() => setIsModalOpen(false)} 
-        />
+      </div>
+      <StoryModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </section>
   );
 }

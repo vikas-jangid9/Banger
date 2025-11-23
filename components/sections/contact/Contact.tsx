@@ -54,39 +54,39 @@ export default function Contact() {
   };
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="contact">
       <div className={styles.halftoneOverlay}></div>
 
       <div className={styles.container}>
         <h2 className={styles.heading}>LET'S MAKE IT A BANGER DEAL</h2>
         <p className={styles.subText}>
-          STOCK US. SCOOP US. PARTNER WITH US. WHETHER YOU WANT TO BRING BANGER TO YOUR CAFÉ, 
+          STOCK US. SCOOP US. PARTNER WITH US. WHETHER YOU WANT TO BRING BANGER TO YOUR CAFÉ,
           EVENT, HOTEL, CAMPUS OR OFFICE - THIS IS WHERE THE MAGIC BEGINS.
           <br /><br />
           FILL OUT THE FORM BELOW AND WE'LL GET BACK FASTER THAN A CONE MELTS IN MAY.
         </p>
 
         <form className={styles.form} onSubmit={handleSubmit}>
-          
+
           {/* Row 1 */}
           <div className={styles.fieldGroup}>
             <label className={styles.label}>NAME</label>
-            <input 
-              type="text" 
-              name="name" 
-              className={styles.input} 
-              required 
-              value={formData.name} 
+            <input
+              type="text"
+              name="name"
+              className={styles.input}
+              required
+              value={formData.name}
               onChange={handleChange}
             />
           </div>
           <div className={styles.fieldGroup}>
             <label className={styles.label}>BUSINESS / COMPANY NAME</label>
-            <input 
-              type="text" 
-              name="businessName" 
-              className={styles.input} 
-              value={formData.businessName} 
+            <input
+              type="text"
+              name="businessName"
+              className={styles.input}
+              value={formData.businessName}
               onChange={handleChange}
             />
           </div>
@@ -94,23 +94,23 @@ export default function Contact() {
           {/* Row 2 */}
           <div className={styles.fieldGroup}>
             <label className={styles.label}>CITY + LOCATION</label>
-            <input 
-              type="text" 
-              name="city" 
-              className={styles.input} 
-              required 
-              value={formData.city} 
+            <input
+              type="text"
+              name="city"
+              className={styles.input}
+              required
+              value={formData.city}
               onChange={handleChange}
             />
           </div>
           <div className={styles.fieldGroup}>
             <label className={styles.label}>TYPE OF ENQUIRY</label>
-            <input 
-              type="text" 
-              name="enquiryType" 
-              className={styles.input} 
+            <input
+              type="text"
+              name="enquiryType"
+              className={styles.input}
               placeholder="Franchise, Event, etc."
-              value={formData.enquiryType} 
+              value={formData.enquiryType}
               onChange={handleChange}
             />
           </div>
@@ -118,23 +118,23 @@ export default function Contact() {
           {/* Row 3 */}
           <div className={styles.fieldGroup}>
             <label className={styles.label}>EMAIL ADDRESS</label>
-            <input 
-              type="email" 
-              name="email" 
-              className={styles.input} 
-              required 
-              value={formData.email} 
+            <input
+              type="email"
+              name="email"
+              className={styles.input}
+              required
+              value={formData.email}
               onChange={handleChange}
             />
           </div>
           <div className={styles.fieldGroup}>
             <label className={styles.label}>PHONE NUMBER</label>
-            <input 
-              type="tel" 
-              name="phone" 
-              className={styles.input} 
-              required 
-              value={formData.phone} 
+            <input
+              type="tel"
+              name="phone"
+              className={styles.input}
+              required
+              value={formData.phone}
               onChange={handleChange}
             />
           </div>
@@ -142,10 +142,10 @@ export default function Contact() {
           {/* Full Width Textarea */}
           <div className={`${styles.fieldGroup} ${styles.fullWidth}`}>
             <label className={styles.label}>TELL US MORE</label>
-            <textarea 
-              name="message" 
-              className={styles.textarea} 
-              value={formData.message} 
+            <textarea
+              name="message"
+              className={styles.textarea}
+              value={formData.message}
               onChange={handleChange}
             ></textarea>
           </div>
@@ -156,7 +156,7 @@ export default function Contact() {
               {status.loading ? "SENDING..." : "GET IN TOUCH"}
             </button>
           </div>
-          
+
           {/* Status Message */}
           {status.message && (
             <div style={{ gridColumn: '1 / -1', textAlign: 'center', marginTop: '1rem', fontFamily: 'var(--font-comic)' }}>

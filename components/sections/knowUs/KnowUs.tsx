@@ -27,7 +27,7 @@ export default function KnowUs() {
   };
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="know-us">
       <div className={styles.container}>
         {/* Floating Badge */}
         <div className={styles.badge}>KNOW US</div>
@@ -46,10 +46,10 @@ export default function KnowUs() {
       </div>
 
       {/* Modal Component */}
-      <KnowUsModal 
-        isOpen={modalOpen} 
-        onClose={() => setModalOpen(false)} 
-        data={selectedItem} 
+      <KnowUsModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        data={selectedItem}
       />
     </section>
   );

@@ -3,17 +3,16 @@
 import React from "react";
 import dynamic from "next/dynamic";
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
-import "slick-carousel/slick/slick.css"; // Import slick carousel CSS
-import "slick-carousel/slick/slick-theme.css"; // Import slick carousel theme CSS
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import IceCreamCard from "../../ui/iceCreamCard/IceCreamCad";
 import styles from "./flavours.module.css";
 
-// 1. The Data Array (Matches your image reference
 const FLAVORS = [
     {
         id: 1,
         flavorName: "VANILLA",
-        imageSrc: "/images/vanilla.png", // Replace with your actual paths
+        imageSrc: "https://placehold.co/220x220/white/black?text=Vanilla",
         statText: "CREAMY 100%",
         description: "Don't call it plain. This one's a smooth classic with main character energy.",
         theme: "white"
@@ -21,7 +20,7 @@ const FLAVORS = [
     {
         id: 2,
         flavorName: "RED GUAVA",
-        imageSrc: "/images/guava.png",
+        imageSrc: "https://placehold.co/220x220/pink/white?text=Red+Guava",
         statText: "ZING 100%",
         description: "Tropical chaos in a cup. Sweet, spicy, and unapologetically loud.",
         theme: "pink"
@@ -29,7 +28,7 @@ const FLAVORS = [
     {
         id: 3,
         flavorName: "CHOCOLATE",
-        imageSrc: "/images/chocolate.png",
+        imageSrc: "https://placehold.co/220x220/brown/white?text=Chocolate",
         statText: "SMOOTHNESS 100%",
         description: "Dark, moody, and intense. The brooding hero of the ice cream world.",
         theme: "brown"
@@ -37,7 +36,7 @@ const FLAVORS = [
     {
         id: 4,
         flavorName: "BUTTERSCOTCH",
-        imageSrc: "/images/butterscotch.png",
+        imageSrc: "https://placehold.co/220x220/orange/white?text=Butterscotch",
         statText: "DELIGHT 100%",
         description: "Sweet, buttery, with just the right snap. Golden hour in a cone.",
         theme: "yellow"
@@ -45,7 +44,7 @@ const FLAVORS = [
     {
         id: 5,
         flavorName: "BIG CHOCOBAR",
-        imageSrc: "/images/chocobar.png",
+        imageSrc: "https://placehold.co/220x220/brown/white?text=Chocobar",
         statText: "BLISS 100%",
         description: "Classic choco power, now supersized. It's giving bold, it's giving banger.",
         theme: "brown"
@@ -53,7 +52,7 @@ const FLAVORS = [
     {
         id: 6,
         flavorName: "MANGO DOLLY",
-        imageSrc: "/images/mango.png",
+        imageSrc: "https://placehold.co/220x220/orange/white?text=Mango",
         statText: "INDULGENCE 100%",
         description: "All mango, no drama. A juicy classic you'll finish before your post uploads.",
         theme: "orange"
@@ -61,7 +60,6 @@ const FLAVORS = [
 ];
 
 export default function FlavorSlider() {
-    // 2. Slider Settings
     const settings = {
         dots: false,
         infinite: true,
@@ -99,7 +97,7 @@ export default function FlavorSlider() {
     };
 
     return (
-        <section className={styles.section}>
+        <section className={styles.section} id="product">
 
             {/* Title Section */}
             <div className={styles.header}>
