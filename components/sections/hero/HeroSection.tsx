@@ -121,7 +121,7 @@ export default function HeroSection() {
 
       <div className={styles.boltContainer}>
         <Image
-          src='/assets/images/Hero-banner-bg.png'
+          src='/assets/images/Hero-banner-bg.webp'
           alt='Lighting Bolt'
           width={1920}
           height={1080}
@@ -131,7 +131,7 @@ export default function HeroSection() {
         />
 
         <Image
-          src='/assets/images/Hero-main-image.png'
+          src='/assets/images/Hero-main-image.webp'
           alt='Hero'
           width={1920}
           height={1080}

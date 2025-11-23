@@ -12,7 +12,7 @@ const FLAVORS = [
     {
         id: 1,
         flavorName: "VANILLA",
-        imageSrc: "https://placehold.co/220x220/white/black?text=Vanilla",
+        imageSrc: "/assets/images/Rectangle.webp",
         statText: "CREAMY 100%",
         description: "Don't call it plain. This one's a smooth classic with main character energy.",
         theme: "white"
@@ -20,7 +20,7 @@ const FLAVORS = [
     {
         id: 2,
         flavorName: "RED GUAVA",
-        imageSrc: "https://placehold.co/220x220/pink/white?text=Red+Guava",
+        imageSrc: "/assets/images/Rectangle.webp",
         statText: "ZING 100%",
         description: "Tropical chaos in a cup. Sweet, spicy, and unapologetically loud.",
         theme: "pink"
@@ -28,7 +28,7 @@ const FLAVORS = [
     {
         id: 3,
         flavorName: "CHOCOLATE",
-        imageSrc: "https://placehold.co/220x220/brown/white?text=Chocolate",
+        imageSrc: "/assets/images/Rectangle.webp",
         statText: "SMOOTHNESS 100%",
         description: "Dark, moody, and intense. The brooding hero of the ice cream world.",
         theme: "brown"
@@ -36,7 +36,7 @@ const FLAVORS = [
     {
         id: 4,
         flavorName: "BUTTERSCOTCH",
-        imageSrc: "https://placehold.co/220x220/orange/white?text=Butterscotch",
+        imageSrc: "/assets/images/Rectangle.webp",
         statText: "DELIGHT 100%",
         description: "Sweet, buttery, with just the right snap. Golden hour in a cone.",
         theme: "yellow"
@@ -44,7 +44,7 @@ const FLAVORS = [
     {
         id: 5,
         flavorName: "BIG CHOCOBAR",
-        imageSrc: "https://placehold.co/220x220/brown/white?text=Chocobar",
+        imageSrc: "/assets/images/Rectangle.webp",
         statText: "BLISS 100%",
         description: "Classic choco power, now supersized. It's giving bold, it's giving banger.",
         theme: "brown"
@@ -52,7 +52,7 @@ const FLAVORS = [
     {
         id: 6,
         flavorName: "MANGO DOLLY",
-        imageSrc: "https://placehold.co/220x220/orange/white?text=Mango",
+        imageSrc: "/assets/images/Rectangle.webp",
         statText: "INDULGENCE 100%",
         description: "All mango, no drama. A juicy classic you'll finish before your post uploads.",
         theme: "orange"
@@ -65,14 +65,18 @@ export default function FlavorSlider() {
         arrows: false,
         infinite: true,
         speed: 700,
-        slidesToShow: 4, // Show 4 items on desktop
-        slidesToScroll: 1,
-        centerMode: true, // Helps centered look
+        centerMode: true,
         centerPadding: "40px",
         autoplay: true,
         autoplaySpeed: 3000,
         cssEase: "linear",
         responsive: [
+            {
+                breakpoint: 1800,
+                settings: {
+                    slidesToShow: 4,
+                }
+            },
             {
                 breakpoint: 1200,
                 settings: {

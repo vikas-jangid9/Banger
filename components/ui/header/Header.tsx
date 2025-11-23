@@ -23,7 +23,7 @@ const Header: React.FC = () => {
         <div className={style.logoContainer}>
           <Link href="/" passHref onClick={closeMenu}>
             <Image
-              src="/assets/images/logo.png"
+              src="/assets/images/logo.webp"
               alt="Company Logo"
               width={100}
               height={40}
