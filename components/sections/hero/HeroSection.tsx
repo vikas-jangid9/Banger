@@ -121,7 +121,7 @@ export default function HeroSection() {
 
       <div className={styles.boltContainer}>
         <Image
-          src='/assets/images/hero-banner-bg.png'
+          src='/assets/images/Hero-banner-bg.png'
           alt='Lighting Bolt'
           width={1920}
           height={1080}
