@@ -1,0 +1,58 @@
+.headerBox{
+  background-color: var(--primary-orange); /* bg-gray-800 */
+  color: var(--off-white); /* text-white */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Ensure it spans full width */
+  max-width: 130rem;
+  margin: auto;
+}
+
+.logoContainer {
+  flex-shrink: 0; /* flex-shrink-0 */
+}
+
+.logoImage {
+  height: 8rem !important; /* h-8 */
+  object-fit: contain;
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+  .logoImage {
+    height: 2.5rem; /* md:h-10 */
+  }
+}
+
+.navbarNav {
+  display: flex; /* flex */
+  list-style: none; /* Remove default list bullets */
+  margin: 0;
+  padding: 0;
+  gap: 1rem; /* space-x-4 */
+}
+
+.navLink{
+  font-size: 1.6rem;
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+  .navbarNav {
+    gap: 1.5rem; /* md:space-x-6 */
+  }
+}
+
+.navLink {
+  color: inherit; /* Ensure link color is inherited from .header */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.2s ease-in-out; /* Smooth transition for hover */
+}
+
+.navLink:hover {
+  color: #cbd5e0; /* hover:text-gray-300 */
+}

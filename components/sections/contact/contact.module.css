@@ -1,0 +1,148 @@
+/* src/components/ContactSection/ContactSection.module.css */
+
+.section {
+  position: relative;
+  background-color: var(--primary-orange);
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  color: var(--white);
+}
+
+/* --- Halftone Pattern Overlay --- */
+.halftoneOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --- Content Wrapper --- */
+.container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.heading {
+  font-family: var(--font-comic);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  /* Slight text shadow for readability on orange */
+  text-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+}
+
+.subText {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-transform: uppercase;
+  font-weight: 600;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+
+/* --- The Form Grid --- */
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3rem;
+  row-gap: 2rem;
+  text-align: left;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldGroup.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.label {
+  font-family: var(--font-comic);
+  font-size: 1rem;
+  color: var(--black-ink); /* Dark text for labels */
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* --- Input Styles --- */
+.input, .textarea {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  padding: 1rem;
+  background-color: var(--footer-pink); /* The light peach color */
+  border: none;
+  outline: none;
+  color: var(--black-ink);
+  width: 100%;
+  
+  /* The Heavy Shadow Effect */
+  box-shadow: 8px 8px 0px var(--black-ink);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+/* Focus / Active states to make it feel interactive */
+.input:focus, .textarea:focus {
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0px var(--black-ink);
+}
+
+/* --- Submit Button Wrapper --- */
+.submitWrapper {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.submitBtn {
+  font-family: var(--font-comic);
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  background-color: var(--white);
+  color: var(--black-ink);
+  padding: 0.8rem 4rem;
+  border: 3px solid var(--black-ink);
+  cursor: pointer;
+  /* Reverse shadow style for button */
+  box-shadow: 8px 8px 0px var(--black-ink);
+  transform: rotate(-2deg);
+  transition: all 0.2s ease;
+}
+
+.submitBtn:hover {
+  transform: rotate(0deg) scale(1.05);
+  background-color: var(--lightning-yellow);
+}
+
+.submitBtn:active {
+  transform: translate(4px, 4px) rotate(0deg);
+  box-shadow: 2px 2px 0px var(--black-ink);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .form {
+    grid-template-columns: 1fr; /* Stack columns */
+    column-gap: 0;
+  }
+}

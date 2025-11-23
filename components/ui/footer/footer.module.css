@@ -1,0 +1,52 @@
+.footerContainer {
+  background-color: #fddcdc; /* Pale pink/peach */
+  width: 100%;
+  padding: 1.5rem 2rem; /* Adjust padding as needed */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  gap: 1rem; /* Space between items */
+
+  /* Typography */
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* Placeholder comic-style font */
+  color: #333333; /* Dark charcoal shade */
+  text-transform: uppercase;
+  font-size: 0.85rem; /* Adjust font size as needed */
+  line-height: 1.2;
+}
+
+.footerItem {
+  white-space: nowrap; /* Prevent items from breaking lines unless explicitly allowed */
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit color from parent container */
+}
+
+.footerItem:hover {
+  opacity: 0.8; /* Simple hover effect for links */
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Space between icon and text */
+}
+
+.instagramIcon {
+  /* Adjust icon size if necessary */
+  width: 1.2em;
+  height: 1.2em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footerContainer {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+
+  .footerItem {
+    margin-bottom: 0.5rem; /* Add some vertical spacing */
+  }
+}

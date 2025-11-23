@@ -1,0 +1,185 @@
+/* src/components/KnowUs/KnowUs.module.css */
+
+.section {
+  padding: 7rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--off-white);
+  font-family: var(--font-comic);
+}
+
+/* --- The Main Container with Shadow --- */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  background-color: var(--white);
+  border: 2px solid var(--black-ink);
+  /* The thick comic shadow effect */
+  box-shadow: 12px 12px 0px var(--black-ink);
+  margin-top: 2rem;
+}
+
+/* --- The Floating Badge "KNOW US" --- */
+.badge {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  background-color: var(--primary-orange);
+  color: var(--white);
+  padding: 0.5rem 2rem;
+  border: 2px solid var(--black-ink);
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 10;
+  box-shadow: 4px 4px 0px var(--black-ink);
+}
+
+/* --- Grid Layout --- */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.card {
+  /* Flex-grow allows items to expand to fill the row */
+  flex-grow: 1;
+  /* Base width for 4 items per row (100% / 4 = 25%) */
+  flex-basis: 25%;
+  aspect-ratio: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  border: 2px solid var(--black-ink);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: var(--white);
+  color: var(--black-ink);
+  font-size: 2rem;
+  line-height: 1.2;
+  /* Handling the borders to prevent double thick lines */
+  margin-right: -1px;
+  margin-bottom: -1px;
+}
+
+/* Adjust widths for smaller screens */
+@media (max-width: 768px) {
+  .card {
+    flex-basis: 50%;
+    /* 2 items per row on mobile */
+  }
+}
+
+.card:hover {
+  background-color: var(--primary-orange);
+  /* Orange hover */
+  color: var(--white);
+}
+
+/* The active/highlighted style (Orange card) */
+.cardActive {
+  background-color: var(--primary-orange) !important;
+  color: var(--white);
+}
+
+/* --- MODAL STYLES --- */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.modalContent {
+  width: 100%;
+  max-width: 900px;
+  background-color: var(--off-white);
+  border: 3px solid var(--black-ink);
+  box-shadow: 10px 10px 0px var(--black-ink);
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.modalLeft {
+  flex: 1;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modalTitle {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.modalText {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.modalRight {
+  flex: 0.8;
+  position: relative;
+  border-left: 3px solid var(--black-ink);
+}
+
+.modalRight img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--white);
+  border: 2px solid var(--black-ink);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  font-family: var(--font-body);
+  transition: transform 0.2s;
+}
+
+.closeButton:hover {
+  background: var(--primary-orange);
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .modalContent {
+    flex-direction: column;
+  }
+
+  .modalRight {
+    height: 200px;
+    border-left: none;
+    border-top: 3px solid black;
+  }
+}

@@ -1,26 +1,84 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* -------------------------- */
+  /* COLOR PALETTE         */
+  /* -------------------------- */
+
+  /* Primary Brand Colors */
+  --primary-orange: #F05F24;    
+  --black-ink: #1A1818;         /* Dark charcoal for text & comic borders (not pure black) */
+  --white: #FFFFFF;             /* Pure white */
+  --off-white: #F6F2ED;         /* Subtle background for content sections */
+  --footer-pink: #F9EBE7;       /* Pale peach/pink from the footer reference */
+
+  /* Card/Flavor Palette (For the Slider) */
+  --flavor-mint: #B2DFDB;
+  --flavor-pink: #FFCDD2;
+  --flavor-brown: #D7CCC8;
+  --flavor-orange: #FFCC80;
+  --flavor-purple: #D1C4E9;
+
+  --font-comic: var(--font-banger-comic, 'Comic Sans MS', cursive, sans-serif);
+  --font-body: var(--font-geist-sans, system-ui, sans-serif);
+
+  /* -------------------------- */
+  /* LAYOUT & BORDERS      */
+  /* -------------------------- */
+  
+  --border-thick-width: 3px;
+  --border-thin-width: 1.5px;
+  --border-style: solid;
+
+  --border-thick: var(--border-thick-width) var(--border-style) var(--black-ink); /* Standard comic outline */
+  --border-thin: var(--border-thin-width) var(--border-style) var(--black-ink);
+
+  --container-width: 1200px;
+  --radius-comic: 12px; /* Slightly rounded corners for panels */
+  
+  /* Shadow for comic-book 'pop' effect */
+  --shadow-offset-x: 4px;
+  --shadow-offset-y: 4px;
+  --shadow-blur: 0px;
+  --shadow-color: var(--black-ink);
+  --comic-pop-shadow: var(--shadow-offset-x) var(--shadow-offset-y) var(--shadow-blur) var(--shadow-color);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* -------------------------- */
+/* GLOBAL RESETS         */
+/* -------------------------- */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--white);
+  color: var(--black-ink);
+  font-family: var(--font-body);
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* -------------------------- */
+/* UTILITY CLASSES         */
+/* -------------------------- */
+
+/* Quick class to add the comic book border style to any element */
+.comic-border {
+  border: var(--border-thick);
+  box-shadow: var(--comic-pop-shadow); /* The 'pop' shadow effect */
+}
+
+/* Utility to force the comic font */
+.font-comic {
+  font-family: var(--font-comic);
+  text-transform: uppercase;
 }

@@ -1,0 +1,144 @@
+/* src/components/HeroSection/HeroSection.module.css */
+
+.section {
+  position: relative;
+  height: calc(100vh - 80px); 
+  min-height: 600px;
+  background-color: var(--primary-orange);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Pushes content to the right */
+  padding: 2rem 5%;
+}
+
+.halftoneOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Creates small dots using a radial gradient */
+  background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1.5px, transparent 1.5px);
+  background-size: 20px 20px; /* Spacing of dots */
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --- The Lightning Bolt Graphic Container --- */
+.boltContainer {
+  position: absolute;
+  top: 0;
+  left: 0%;
+  height: 100%; 
+  width: 85%;
+  z-index: 2;
+  transform-origin: left center;
+}
+
+.boltSvg {
+  width: 100%;
+  height: 100%;
+  /* The main yellow color */
+  fill: var(--lightning-yellow);
+  /* The darker "shadow" part of the bolt */
+  filter: drop-shadow(15px 15px 0px #E1A61F); 
+}
+
+.heroBg{
+    position: absolute;
+    z-index: 0;
+    max-height: 360px;
+}
+
+
+
+.heroMain{
+    position: absolute;
+    z-index: 2;
+    max-width: 500px;
+    left: 230px;
+}
+
+/* --- Content Section (Text & Button) --- */
+.content {
+  position: relative;
+  z-index: 10; /* Above the bolt */
+  text-align: right;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* Initial state for GSAP to animate from */
+  visibility: hidden; 
+}
+
+.mainTitle {
+  font-family: var(--font-comic);
+  font-size: clamp(3rem, 8vw, 5.5rem); /* Responsive comic sizing */
+  line-height: 0.9;
+  color: var(--white);
+  text-transform: uppercase;
+  font-style: italic;
+  margin-bottom: 1rem;
+  
+  /* The Comic Text Outline Effect */
+  -webkit-text-stroke: 3px var(--black-ink);
+  text-shadow: 5px 5px 0px var(--black-ink);
+  transform: rotate(-2deg); /* Slight comic tilt */
+}
+
+.subTitle {
+  font-family: var(--font-comic);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: var(--white);
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  text-shadow: 2px 2px 0px var(--black-ink);
+  transform: rotate(-1deg);
+}
+
+.subTitle span {
+  /* Makes "WITH" and "AND" slightly smaller if needed, 
+     based on image, they look similar size though. */
+}
+
+/* --- The Comic Button --- */
+.ctaButton {
+  font-family: var(--font-comic);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  background-color: var(--white);
+  color: var(--black-ink);
+  padding: 0.8rem 3rem;
+  border: 3px solid var(--black-ink);
+  cursor: pointer;
+  /* The heavy comic shadow box */
+  box-shadow: 8px 8px 0px var(--black-ink);
+  transition: all 0.2s ease;
+  transform: rotate(-1deg);
+}
+
+.ctaButton:hover {
+  transform: translate(4px, 4px) rotate(-1deg);
+  box-shadow: 4px 4px 0px var(--black-ink);
+  background-color: var(--lightning-yellow);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section {
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 4rem;
+  }
+  .content {
+    align-items: center;
+    text-align: center;
+  }
+  .boltContainer {
+    width: 120%;
+    left: -30%;
+    opacity: 0.7; /* Fade bolt slightly on mobile so text pops */
+  }
+}

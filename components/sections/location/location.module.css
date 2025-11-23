@@ -1,0 +1,169 @@
+/* src/components/Locations/Locations.module.css */
+
+.section {
+  position: relative;
+  width: 100%;
+  /* Ensure a decent height to show the map. Adjust based on image aspect ratio */
+  min-height: 700px; 
+  height: 90vh; 
+  
+  /* --- THE SINGLE BACKGROUND IMAGE --- */
+  /* Replace the URL below with your actual local image path, e.g., url('/assets/images/map-background.jpg') */
+  background-image: url('https://placehold.co/1600x900/FF602C/FFFFFF?text=Map+Background+Image+(Orange+with+White+Highlight)');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes top content up, bottom content down */
+  padding: 4rem 5%;
+  overflow: hidden;
+  color: var(--white);
+}
+
+/* --- Top Left Content --- */
+.topContent {
+  max-width: 600px;
+  z-index: 2;
+}
+
+.heading {
+  font-family: var(--font-comic);
+  font-size: clamp(3rem, 6vw, 5rem);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  line-height: 1;
+  /* Optional comic text shadow */
+  text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+}
+
+.subText {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-weight: 500;
+  text-transform: uppercase;
+  max-width: 500px;
+}
+
+/* --- The "AHMEDABAD" Label on the Map --- */
+.mapLabel {
+  position: absolute;
+  /* These positions need tweaking to match your exact background image */
+  top: 50%;
+  right: 20%;
+  transform: translateY(-50%);
+  
+  font-family: var(--font-comic);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  text-transform: uppercase;
+  color: var(--white);
+  z-index: 1;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+}
+
+/* --- The Bottom Stats Box --- */
+.statsBox {
+  background-color: var(--off-white);
+  color: var(--black-ink); /* Switching text back to dark for inside the box */
+  padding: 2rem 3rem;
+  max-width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Comic border style */
+  border: 3px solid var(--black-ink);
+  box-shadow: 8px 8px 0px rgba(0,0,0,0.2); 
+  z-index: 2;
+}
+
+.statsDescription {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.4;
+  flex: 1; /* Takes up available space to the left */
+  padding-right: 2rem;
+}
+
+.statsCounters {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; /* Prevents squishing */
+}
+
+.counterItem {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 0 1.5rem;
+  border-left: 2px solid var(--black-ink);
+  display: flex;
+  flex-direction: column;
+}
+
+.counterNumber {
+  font-family: var(--font-comic);
+  font-size: 2.5rem;
+  color: var(--primary-orange);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .section {
+    min-height: 600px;
+    height: auto;
+  }
+  
+  .mapLabel {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    margin: 3rem 0;
+    text-align: center;
+  }
+
+  .statsBox {
+    flex-direction: column;
+    padding: 2rem;
+    align-items: flex-start;
+  }
+
+  .statsDescription {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .statsCounters {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .counterItem:first-child {
+      border-left: none;
+      padding-left: 0;
+  }
+}
+@media (max-width: 480px) {
+    .statsCounters {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .counterItem {
+        border-left: none;
+        padding: 0;
+        border-bottom: 2px solid var(--black-ink);
+        padding-bottom: 1rem;
+        width: 100%;
+    }
+     .counterItem:last-child {
+         border-bottom: none;
+     }
+}

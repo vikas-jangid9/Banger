@@ -1,0 +1,149 @@
+/* components/IceCreamCard.module.css */
+
+.cardContainer {
+  /* Define theme colors */
+  --bg-color: #F2E8DA;
+  --border-color: #2C2C2C; /* A dark charcoal, not pure black */
+  --sunburst-light: #F9F3EA;
+  --sunburst-dark: #EBE0D0;
+  /* Use a comic-style font. For best results, import a font like 'Bangers' from Google Fonts in your globals.css */
+  --comic-font: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif;
+
+  background-color: var(--bg-color);
+  border-radius: 24px;
+  padding: 16px;
+  width: 300px; /* Fixed width for consistency */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+}
+
+.comicPanel {
+  border: 3px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--bg-color);
+}
+
+/* --- Title Section --- */
+.titlePanel {
+  text-align: center;
+  padding: 10px;
+  border-bottom: 3px solid var(--border-color);
+  position: relative;
+}
+
+/* Create the double border effect */
+.titlePanel::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.title {
+  font-family: var(--comic-font);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--border-color);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* --- Image Section with Sunburst --- */
+.imagePanel {
+  position: relative;
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 3px solid var(--border-color);
+  overflow: hidden; /* Keeps the spinning background inside the borders */
+}
+
+/* Move the gradient to the pseudo-element */
+.imagePanel::before {
+  content: '';
+  position: absolute;
+  /* We make it 200% width/height to ensure corners are covered while spinning */
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  z-index: 0; /* Places it behind the image */
+  
+  background: repeating-conic-gradient(
+    from 0deg at 50% 50%,
+    var(--sunburst-light) 0deg 20deg,
+    var(--sunburst-dark) 20deg 40deg
+  );
+
+  /* The Animation */
+  animation: sunburstSpin 20s linear infinite;
+}
+
+.image {
+  position: relative; /* Needed for z-index to work */
+  z-index: 1; /* Ensures image stays on top of the background */
+  transform: rotate(-4deg);
+  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.2));
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* --- Stats Section --- */
+.statsPanel {
+  text-align: center;
+  padding: 10px;
+  border-bottom: 3px solid var(--border-color);
+  position: relative;
+  background-color: var(--bg-color);
+}
+
+/* Double border above the stats panel */
+.statsPanel::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 0;
+  right: 0;
+  border-top: 2px solid var(--border-color);
+}
+
+.statText {
+  font-family: var(--comic-font);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--border-color);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* --- Description Section --- */
+.descriptionPanel {
+  padding: 14px;
+  text-align: center;
+  background-color: var(--bg-color);
+}
+
+.description {
+  font-family: var(--comic-font);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--border-color);
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* --- Animations --- */
+@keyframes sunburstSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
