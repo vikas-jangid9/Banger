@@ -1,4 +1,3 @@
-// src/components/HeroSection/HeroSection.js
 "use client";
 
 import React, { useRef } from "react";
@@ -131,22 +130,14 @@ export default function HeroSection() {
           ref={boltRef} // Assign boltRef to the background image
         />
 
-        {/* Video Replacement for Couple */}
-        <div className={styles.heroMain} ref={heroMainRef}>
-          <video
-            src='http://localhost:3000/assets/vedios/Video_Revision_Request_Granted.gif'
-            autoPlay
-            loop
-            muted
-            playsInline
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'contain',
-              mixBlendMode: 'multiply'
-            }}
-          />
-        </div>
+        <Image
+          src='/assets/images/hero-main-image.png'
+          alt='Hero'
+          width={1920}
+          height={1080}
+          layout="responsive"
+          className={styles.heroMain}
+        />
       </div>
 
       {/* Text Content */}
