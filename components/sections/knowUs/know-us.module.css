@@ -73,6 +73,10 @@
     flex-basis: 50%;
     /* 2 items per row on mobile */
   }
+
+  .section{
+    padding: 7rem 2rem;
+  }
 }
 
 .card:hover {

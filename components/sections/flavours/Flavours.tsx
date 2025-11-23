@@ -62,8 +62,9 @@ const FLAVORS = [
 export default function FlavorSlider() {
     const settings = {
         dots: false,
+        arrows: false,
         infinite: true,
-        speed: 500,
+        speed: 700,
         slidesToShow: 4, // Show 4 items on desktop
         slidesToScroll: 1,
         centerMode: true, // Helps centered look

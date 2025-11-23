@@ -76,6 +76,10 @@
   margin-bottom: 3rem;
 }
 
+.title{
+  font-size: 2rem;
+}
+
 /* RENAMED to avoid conflict with modal title */
 .mainTitle {
   font-family: var(--font-comic);
