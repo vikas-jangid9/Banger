@@ -100,11 +100,6 @@
   transform: rotate(-1deg);
 }
 
-.subTitle span {
-  /* Makes "WITH" and "AND" slightly smaller if needed, 
-     based on image, they look similar size though. */
-}
-
 /* --- The Comic Button --- */
 .ctaButton {
   font-family: var(--font-comic);
