@@ -82,6 +82,7 @@
   text-transform: uppercase;
   font-style: italic;
   margin-bottom: 1rem;
+  font-weight: 700;
 
   /* The Comic Text Outline Effect */
   -webkit-text-stroke: 3px var(--black-ink);
@@ -152,6 +153,7 @@
 
   .mainTitle{
     text-shadow: none;
-    -webkit-text-stroke: 2px var(--black-ink);
+    -webkit-text-stroke: 1px var(--black-ink);
+    font-weight: 700;
   }
 }

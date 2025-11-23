@@ -66,21 +66,17 @@ export default function FlavorSlider() {
         infinite: true,
         speed: 700,
         centerMode: true,
-        centerPadding: "40px",
+        centerPadding: "60px", // Default for smallest screens
         autoplay: true,
         autoplaySpeed: 3000,
         cssEase: "linear",
         responsive: [
             {
-                breakpoint: 1800,
+                breakpoint: 600,
                 settings: {
-                    slidesToShow: 4,
-                }
-            },
-            {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 1,
+                    centerMode: true,
+                    centerPadding: "60px",
                 }
             },
             {
@@ -88,14 +84,23 @@ export default function FlavorSlider() {
                 settings: {
                     slidesToShow: 2,
                     centerMode: false,
+                    centerPadding: "0px", // Reset padding for larger screens
                 }
             },
             {
-                breakpoint: 600,
+                breakpoint: 1200,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 3,
+                    centerMode: true, // Re-enable centerMode for larger screens if desired
+                    centerPadding: "40px",
+                }
+            },
+            {
+                breakpoint: 1800,
+                settings: {
+                    slidesToShow: 4,
                     centerMode: true,
-                    centerPadding: "60px", // Shows a peek of next cards on mobile
+                    centerPadding: "40px",
                 }
             }
         ]
