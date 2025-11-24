@@ -1,10 +1,20 @@
+@font-face {
+  font-family: 'Dosis';
+  src: url('/assets/Font/Dosis/Dosis-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Bangers';
+  src: url('/assets/Font/Bangers/Bangers-Regular.ttf') format('truetype');
+}
+
 :root {
   /* -------------------------- */
   /* COLOR PALETTE         */
   /* -------------------------- */
 
   /* Primary Brand Colors */
-  --primary-orange: #F05F24;    
+  --primary-orange: #F05F24;
   --black-ink: #1A1818;         /* Dark charcoal for text & comic borders (not pure black) */
   --white: #FFFFFF;             /* Pure white */
   --off-white: #F6F2ED;         /* Subtle background for content sections */
@@ -17,23 +27,25 @@
   --flavor-orange: #FFCC80;
   --flavor-purple: #D1C4E9;
 
-  --font-comic: var(--font-banger-comic, 'Comic Sans MS', cursive, sans-serif);
-  --font-body: var(--font-geist-sans, system-ui, sans-serif);
+  --font-comic: 'Bangers', cursive, sans-serif;
+  --font-body: 'Dosis', sans-serif;
 
   /* -------------------------- */
   /* LAYOUT & BORDERS      */
   /* -------------------------- */
-  
+
   --border-thick-width: 3px;
   --border-thin-width: 1.5px;
   --border-style: solid;
 
-  --border-thick: var(--border-thick-width) var(--border-style) var(--black-ink); /* Standard comic outline */
+  --border-thick: var(--border-thick-width) var(--border-style) var(--black-ink);
+  /* Standard comic outline */
   --border-thin: var(--border-thin-width) var(--border-style) var(--black-ink);
 
   --container-width: 1200px;
-  --radius-comic: 12px; /* Slightly rounded corners for panels */
-  
+  --radius-comic: 12px;
+  /* Slightly rounded corners for panels */
+
   /* Shadow for comic-book 'pop' effect */
   --shadow-offset-x: 4px;
   --shadow-offset-y: 4px;
@@ -59,7 +71,8 @@ body {
   background-color: var(--white);
   color: var(--black-ink);
   font-family: var(--font-body);
-  font-size: 62.5%; /* 1rem = 10px */
+  font-size: 62.5%;
+  /* 1rem = 10px */
 }
 
 a {
@@ -74,7 +87,8 @@ a {
 /* Quick class to add the comic book border style to any element */
 .comic-border {
   border: var(--border-thick);
-  box-shadow: var(--comic-pop-shadow); /* The 'pop' shadow effect */
+  box-shadow: var(--comic-pop-shadow);
+  /* The 'pop' shadow effect */
 }
 
 /* Utility to force the comic font */
