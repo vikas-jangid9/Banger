@@ -79,7 +79,7 @@ export default function StorySubmit() {
           We’ve made <em>comic strips for every banger flavour.</em> Now it’s your turn—rewrite the story,
           twist the ending, add drama (yes, even aliens).
         </p>
-        <p className={styles.description} style={{ fontSize: '0.9rem', marginTop: '1rem' }}>
+        <p className={styles.description} >
           Each week we feature one on our socials. The winner? Banger-famous.
         </p>
       </div>

@@ -77,21 +77,21 @@
 }
 
 .title{
-  font-size: 2rem;
+  font-size: 2.6rem;
 }
 
 /* RENAMED to avoid conflict with modal title */
 .mainTitle {
   font-family: var(--font-comic);
   color: var(--primary-orange);
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2.6rem, 5vw, 3.5rem);
   margin-bottom: 1.5rem;
   text-transform: uppercase;
 }
 
 .description {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 1.6rem;
   line-height: 1.6;
   color: var(--black-ink);
   font-weight: 600;
@@ -118,7 +118,8 @@
 
 .column h3 {
   font-family: var(--font-comic);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 400;
   color: var(--black-ink);
   margin-bottom: 1.5rem;
   text-transform: uppercase;
@@ -131,7 +132,7 @@
 
 .column li {
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: 1rem;
   line-height: 1.8;
   font-weight: 600;
   text-transform: uppercase;

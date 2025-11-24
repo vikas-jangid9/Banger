@@ -36,6 +36,7 @@
 .heading {
   font-family: var(--font-comic);
   font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 500;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
   /* Slight text shadow for readability on orange */
@@ -71,8 +72,9 @@
 }
 
 .label {
-  font-family: var(--font-comic);
-  font-size: 1rem;
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  font-weight: 500;
   color: var(--black-ink); /* Dark text for labels */
   margin-bottom: 0.5rem;
   text-transform: uppercase;

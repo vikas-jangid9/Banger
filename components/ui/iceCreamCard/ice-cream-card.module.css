@@ -44,7 +44,7 @@
 
 .title {
   font-family: var(--comic-font);
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   font-weight: 800;
   color: var(--border-color);
   margin: 0;
@@ -115,7 +115,7 @@
 
 .statText {
   font-family: var(--comic-font);
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   font-weight: 800;
   color: var(--border-color);
   margin: 0;
@@ -131,7 +131,7 @@
 
 .description {
   font-family: var(--comic-font);
-  font-size: 0.85rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--border-color);
   margin: 0;
