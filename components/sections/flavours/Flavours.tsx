@@ -65,8 +65,9 @@ export default function FlavorSlider() {
         arrows: false,
         infinite: true,
         speed: 700,
+        slidesToShow: 4,
         centerMode: true,
-        centerPadding: "60px", // Default for smallest screens
+        centerPadding: "40px",
         autoplay: true,
         autoplaySpeed: 3000,
         cssEase: "linear",
@@ -76,7 +77,15 @@ export default function FlavorSlider() {
                 settings: {
                     slidesToShow: 1,
                     centerMode: true,
-                    centerPadding: "60px",
+                    centerPadding: "40px",
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    centerMode: true,
+                    centerPadding: "20px",
                 }
             },
             {
