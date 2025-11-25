@@ -9,7 +9,7 @@
   
   /* --- THE SINGLE BACKGROUND IMAGE --- */
   /* Replace the URL below with your actual local image path, e.g., url('/assets/images/map-background.jpg') */
-  background-image: url('https://placehold.co/1600x900/FF602C/FFFFFF?text=Map+Background+Image+(Orange+with+White+Highlight)');
+  background-color: var(--primary-orange);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

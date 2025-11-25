@@ -3,6 +3,7 @@ import KnowUs from "@/components/sections/knowUs/KnowUs";
 import StorySubmit from "@/components/sections/storySection/StorySubmit";
 import Contact from "@/components/sections/contact/Contact";
 import Flavours from "@/components/sections/flavours/Flavours";
+import Location from "@/components/sections/location/Location";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <KnowUs />
       <Flavours />
       <StorySubmit />
+      <Location />
       <Contact />
     </>
   );

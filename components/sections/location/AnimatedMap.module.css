@@ -1,0 +1,38 @@
+.mapContainer {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mapSvg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(10px 10px 0 rgba(0, 0, 0, 0.3));
+}
+
+.mapText {
+    font-family: var(--font-comic);
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+
+    50% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+.bouncePin {
+    animation: bounce 1s infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}

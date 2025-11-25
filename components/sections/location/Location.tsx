@@ -1,11 +1,12 @@
 // src/components/Locations/Locations.js
 import React from 'react';
 import styles from './location.module.css';
+import AnimatedMap from './AnimatedMap';
 
 export default function Locations() {
   return (
     <section className={styles.section}>
-      
+
       {/* 1. Top Left Content */}
       <div className={styles.topContent}>
         <h2 className={styles.heading}>NEED A BANGER</h2>
@@ -16,7 +17,7 @@ export default function Locations() {
 
       {/* 2. The Map Label (Positioned absolutely over the background image) */}
       <div className={styles.mapLabel}>
-        AHMEDABAD
+        <AnimatedMap />
       </div>
 
       {/* 3. The Bottom Stats Box */}
